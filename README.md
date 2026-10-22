@@ -60,7 +60,7 @@ Zusätzlich gibt es ein Netlify-Limit pro Domain/IP. Dies allein wäre kein verl
 Ergebnisse liegen 24 Stunden im gemeinsamen Cache. Abgelaufene Einträge werden bei Wiederverwendung ersetzt; automatisches Aufräumen aller jemals gesuchten Schlüssel ist für später offen. Netlify-Funktionen und Blobs unterliegen dem jeweiligen Tarif; vor breiter Freigabe Verbrauch im Dashboard prüfen.
 
 ## Technische Validierung und Grenzen
-`npm test`: elf Tests zu Routing und Operationsauflösung, Browseranfragen, Unicode/Suchsyntax, IDs, Datumsunterscheidung, konkurrierenden Lease-Schreibzugriffen mit simuliertem Store sowie serverseitiger Konfiguration und Testcode-Abweisung.
+`npm test`: zwölf Tests zu Routing und Operationsauflösung, der Verwendung der Operationsauflösung in der Netlify Function, Browseranfragen, Unicode/Suchsyntax, IDs, Datumsunterscheidung, konkurrierenden Lease-Schreibzugriffen mit simuliertem Store sowie serverseitiger Konfiguration und Testcode-Abweisung.
 `npm run build`: Syntaxprüfung der Browserdatei und Ausschluss von Audio-/ZIP-Dateien im Veröffentlichungsordner.
 
 Live-Deployment, echter Netlify-Blobs-Zugriff, Function-Bundling auf Netlify und MusicBrainz-Erreichbarkeit müssen auf Ihrem Netlify-Projekt noch geprüft werden. Die Entwicklungsumgebung konnte MusicBrainz zuvor nicht gültig abrufen. Es wird deshalb nicht behauptet, dass die fünf Titel bereits online korrekt zugeordnet wurden.

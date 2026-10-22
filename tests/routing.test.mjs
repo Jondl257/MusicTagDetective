@@ -18,6 +18,11 @@ test('direct and rewritten routes identify the operation',()=>{
  assert.equal(resolveOperation('https://app.example/.netlify/functions/musicbrainz?title=Test&id=11111111-1111-1111-1111-111111111111'),'');
  assert.equal(resolveOperation('https://app.example/api/search?operation=evil'),'evil');
 });
+test('Netlify function uses route and parameter operation resolution',async()=>{
+ const source=await readFile(new URL('../netlify/functions/musicbrainz.mjs',import.meta.url),'utf8');
+ assert.match(source,/import\s*\{[^}]*\bresolveOperation\b[^}]*\}\s*from\s*['"]\.\.\/\.\.\/lib\/musicbrainz\.mjs['"]/);
+ assert.match(source,/operation\s*=\s*resolveOperation\(req\.url\)/);
+});
 test('actual browser API sends operations, Unicode and test header directly',async()=>{
  const html=await readFile(new URL('../public/index.html',import.meta.url),'utf8');
  const start=html.indexOf('async function api('),end=html.indexOf('\nfunction audioHTML',start);assert.ok(start>0&&end>start);

@@ -1,6 +1,6 @@
 import {getStore} from '@netlify/blobs';
 import {createHash,randomUUID,timingSafeEqual} from 'node:crypto';
-import {ApiError,buildURL,normalize,acquire,release} from '../../lib/musicbrainz.mjs';
+import {ApiError,buildURL,normalize,acquire,release,resolveOperation} from '../../lib/musicbrainz.mjs';
 const json=(obj,status=200,retry=0)=>new Response(JSON.stringify(obj),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store',...(retry?{'Retry-After':String(retry)}:{})}});
 export default async function handler(req){
  let lease,store,cooldown=2000;
@@ -11,7 +11,7 @@ export default async function handler(req){
   const given=req.headers.get('x-test-code')||'';
   const hash=s=>createHash('sha256').update(s).digest();
   if(!timingSafeEqual(hash(code),hash(given)))return json({error:'Testcode fehlt oder ist falsch. Oben den Netlify-Testcode eingeben.'},401);
-  const p=new URL(req.url).searchParams,operation=p.get('operation'),url=buildURL(operation,p);
+  const p=new URL(req.url).searchParams,operation=resolveOperation(req.url),url=buildURL(operation,p);
   const key='cache/'+createHash('sha256').update(url).digest('hex');
   store=getStore({name:'musictag-musicbrainz-v1',consistency:'strong'});
   const cached=await store.get(key,{type:'json'});
