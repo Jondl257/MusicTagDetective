@@ -1,0 +1,8 @@
+node_modules/
+.netlify/
+.env
+.env.*
+*.mp3
+*.flac
+*.wav
+*.zip

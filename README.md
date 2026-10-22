@@ -1,3 +1,14 @@
+# Korrektur v0.9.1: „Unbekannte Operation“
+
+Die Browseroberfläche ruft die Function direkt auf und sendet die Operation ausdrücklich. Die Funktion erkennt außerdem die bisherigen /api/search- und /api/recording-Pfade. Das Verhalten der Netlify-Weiterleitung ist damit für neue Anfragen nicht mehr entscheidend.
+
+## Aktualisieren
+Inhalt dieses Ordners über die bisherigen Repository-Dateien kopieren und committen. Netlify-Variablen beibehalten. Automatischen Deploy abwarten, Hauptadresse der App öffnen und Strg+F5 drücken. Oben muss v0.9.1 stehen. Testcode setzen und „Bearbeiten“ erneut versuchen.
+
+Die URL-Übergabe wurde lokal geprüft. Live-Ergebnisse müssen danach auf Netlify getestet werden.
+
+---
+
 # MusicTag Detective – Netlify-Test v0.9
 
 ## Was enthalten ist
