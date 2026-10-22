@@ -1,6 +1,6 @@
 # Korrektur v0.9.1: „Unbekannte Operation“
 
-Die Browseroberfläche ruft die Function direkt auf und sendet die Operation ausdrücklich. Die Funktion erkennt außerdem die bisherigen /api/search- und /api/recording-Pfade. Das Verhalten der Netlify-Weiterleitung ist damit für neue Anfragen nicht mehr entscheidend.
+Die Browseroberfläche ruft die Function direkt auf und sendet die Operation ausdrücklich. Falls die Operation im Function-URL-Query fehlt, leitet die Funktion sie aus genau einem der Suchparameter `title` oder `id` ab. Explizit ungültige oder mehrdeutige Angaben werden weiterhin abgewiesen. Die Funktion erkennt außerdem die bisherigen /api/search- und /api/recording-Pfade.
 
 ## Aktualisieren
 Inhalt dieses Ordners über die bisherigen Repository-Dateien kopieren und committen. Netlify-Variablen beibehalten. Automatischen Deploy abwarten, Hauptadresse der App öffnen und Strg+F5 drücken. Oben muss v0.9.1 stehen. Testcode setzen und „Bearbeiten“ erneut versuchen.
@@ -60,7 +60,7 @@ Zusätzlich gibt es ein Netlify-Limit pro Domain/IP. Dies allein wäre kein verl
 Ergebnisse liegen 24 Stunden im gemeinsamen Cache. Abgelaufene Einträge werden bei Wiederverwendung ersetzt; automatisches Aufräumen aller jemals gesuchten Schlüssel ist für später offen. Netlify-Funktionen und Blobs unterliegen dem jeweiligen Tarif; vor breiter Freigabe Verbrauch im Dashboard prüfen.
 
 ## Technische Validierung und Grenzen
-`npm test`: zehn Tests zu Unicode/Suchsyntax, IDs, Datumsunterscheidung konkurrierenden Lease-Schreibzugriffen mit simuliertem Store sowie serverseitiger Konfiguration und Testcode-Abweisung.
+`npm test`: elf Tests zu Routing und Operationsauflösung, Browseranfragen, Unicode/Suchsyntax, IDs, Datumsunterscheidung, konkurrierenden Lease-Schreibzugriffen mit simuliertem Store sowie serverseitiger Konfiguration und Testcode-Abweisung.
 `npm run build`: Syntaxprüfung der Browserdatei und Ausschluss von Audio-/ZIP-Dateien im Veröffentlichungsordner.
 
 Live-Deployment, echter Netlify-Blobs-Zugriff, Function-Bundling auf Netlify und MusicBrainz-Erreichbarkeit müssen auf Ihrem Netlify-Projekt noch geprüft werden. Die Entwicklungsumgebung konnte MusicBrainz zuvor nicht gültig abrufen. Es wird deshalb nicht behauptet, dass die fünf Titel bereits online korrekt zugeordnet wurden.
