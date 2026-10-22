@@ -1,0 +1,67 @@
+[
+  {
+    "id": "1",
+    "file": "11 Abgestochen.mp3",
+    "title": "Abgestochen",
+    "artist": "Alligatoah",
+    "album": "Schlaftabletten, Rotwein III",
+    "year": "2011",
+    "originalYear": "",
+    "number": "11",
+    "duration": 220.247667,
+    "done": false,
+    "later": false
+  },
+  {
+    "id": "2",
+    "file": "Pe aripi de vant [aEznitFs1D4].mp3",
+    "title": "Pe aripi de vant",
+    "artist": "Delia, Kaira",
+    "album": "Pe aripi de vant",
+    "year": "2015",
+    "originalYear": "",
+    "number": "28",
+    "duration": 243.672,
+    "done": false,
+    "later": false
+  },
+  {
+    "id": "3",
+    "file": "Tudor Gheorghe - Dorul călător.mp3",
+    "title": "Dorul călător",
+    "artist": "Tudor Gheorghe",
+    "album": "Tudor Gheorghe",
+    "year": "",
+    "originalYear": "",
+    "number": "18",
+    "duration": 203.5264,
+    "done": false,
+    "later": false
+  },
+  {
+    "id": "4",
+    "file": "Schleim Keim - Trink mit mir noch ein Bier.mp3",
+    "title": "Trink mit mir noch ein Bier",
+    "artist": "Schleim Keim",
+    "album": "",
+    "year": "",
+    "originalYear": "",
+    "number": "",
+    "duration": 149.916735,
+    "done": false,
+    "later": false
+  },
+  {
+    "id": "5",
+    "file": "Uriah Heep - Lady In Black.mp3",
+    "title": "Lady In Black",
+    "artist": "Uriah Heep",
+    "album": "Celebration",
+    "year": "",
+    "originalYear": "",
+    "number": "14",
+    "duration": 329.513878,
+    "done": false,
+    "later": false
+  }
+]
